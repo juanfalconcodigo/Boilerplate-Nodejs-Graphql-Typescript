@@ -1,0 +1,6 @@
+type Query {
+    """ Es un hola """
+    hello:String!
+    """ Es un saludo de bienvenida """
+    welcome:String
+}
