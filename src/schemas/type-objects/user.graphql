@@ -1,0 +1,14 @@
+type User{
+id:ID!
+name:String!
+email:String!
+photo:String!
+password:String!
+createdAt:String!
+}
+
+
+type UserResult{
+    status:Boolean!
+    message:String!
+}

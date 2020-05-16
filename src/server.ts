@@ -4,6 +4,7 @@ import compression from 'compression';
 import { PORT } from './environments/environment';
 import { ApolloServer } from 'apollo-server-express';
 import schema from './schemas';
+import connect from './environments/database';
 
 
 /* 
@@ -25,7 +26,10 @@ class Server {
         this.middlewares();
         this.server = new ApolloServer({
             schema,
-            introspection: true
+            introspection: true,
+            context:({req,connection})=>{
+                return {connect}
+            }
         });
         this.server.applyMiddleware({ app: this.app });
 
